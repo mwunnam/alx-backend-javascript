@@ -1,10 +1,12 @@
 export default function taskBlock(trueOrFalse) {
-  let task = false;
-  let task2 = true;
+  const task = false;
+  const task2 = true;
 
   if (trueOrFalse) {
-    task = true;
-    task2 = false;
+    const task = true;
+    // eslint-disable-line no-unsed-vars
+    const task2 = false;
+     // eslint-disable-line no-unsed-vars
   }
 
   return [task, task2];
