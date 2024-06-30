@@ -15,3 +15,27 @@ This is usefull for async success/failure, becuase of we are much interested in 
 2. Rejected - The action in question faild
 3. Pending - The action is neigther fulfilled or rejected
 4. Settled - The action has fulfilled or rejected
+
+```Javascript
+var promise = new Promise(function(resolve, reject) {
+ // do someting here eg. async, then...
+ if (/* everything turned out fine*/) {
+   resolve('It worked out');
+ }
+ else {
+   reject(Error('It broke'));
+ }
+});
+```
+The promise constructor take one arguement i.e., a callback function which takes two parameter, resolve and reject.
+You can then perform an action in the callback function maybe an async something. You can then call the resolve if everything worked out, if not you can call reject.
+
+
+```Javascript
+promise.then(function(result) {
+  console.log(result); // "stuff worked"
+},function(err) {
+  console.log(err); // Error: "it broke"
+}
+```
+then() takes two parameters which are all callback functions, one for the success of the action and the other for the failure of the action
