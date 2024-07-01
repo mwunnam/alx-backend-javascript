@@ -78,15 +78,16 @@ some methods mutate the existing array whiles other do a shallo copping of the e
 - Primitive types such as strings, numbers and booleans will have their values copied in to the new array. This is not with objects that are strings, Numbers and Booleans)
 
 |Mutating Method| Non-mutating alternative|
-copyWithin()	| -
-fill()		| -
-pop()		| slice(0, -1)
-push(v1, v2)	| concat([v1, v2])
-reverse()	| toReversed()
-shift()		| slice(1)
-sort()		| toSorted()
-splice()	| toSpliced()
-unshift(vi, v2)	| toSpliced(0, 0, v1, v2)
+|---------------|-------------------------|
+|copyWithin()	| -
+|fill()		| -
+|pop()		| slice(0, -1)
+|push(v1, v2)	| concat([v1, v2])
+|reverse()	| toReversed()
+|shift()	| slice(1)
+|sort()		| toSorted()
+|splice()	| toSpliced()
+|unshift(vi, v2)| toSpliced(0, 0, v1, v2)
 
 __to change mutating methods to non-mutating methode, you can use the spread syntax or slice() to create a copy first__
 ```Javascript
