@@ -89,10 +89,29 @@ some methods mutate the existing array whiles other do a shallo copping of the e
 |splice()	| toSpliced()
 |unshift(vi, v2)| toSpliced(0, 0, v1, v2)
 
-__to change mutating methods to non-mutating methode, you can use the spread syntax or slice() to create a copy first__
+to change mutating methods to non-mutating methode, you can use the spread syntax or slice() to create a copy first
 ```Javascript
   arr.copywithin(0, 1, 2); // mutates arr
   const arr2 = arr.slice().copyWithin(0, 1, 2); // does not mutate arr
   const arr3 = [..arr].copyWithin(0, 1, 2); // does not mutate
 ```
+
+#### Iterative methods
+Most array methods take a callback function as an argument. The callback function is called squencially and at most once for each element in the array. The return of the call back function determines the return the return of the method.
+```javascript
+  method(callbackfn, thisArg)
+```
+callbackfn takes three arguments:
+element is the current element being processed in the array
+index the index of the current element being proccessed in the array
+array is the array which the method is called upon.
+
+__thisArg__ argument is be the 'this' value of the callback function. It value is determined by the usual rules:
+1. if callback funtion is non-strict primitive this will be seen as objecs and undefined/null will be substituted with globalThis.
+2. thisArg arguement not neccessary if the callback is defined with an arrow function. Because arrow functions don't have their own this binding.
+
+The array argument is very important if you want to read another index during iteration. Due to the fact that there might not always be an existing index during iteration.
+It is a good practice to not mutate the array during iteration. However you can use the 'array' argument to do so. The array arguemet is not the array that is being built in case of using map(), filter() and flatMap() you can't access the array being built for the callback function.
+
+All iterative methods are copying and generic although they behave differently with empty slots.
 
