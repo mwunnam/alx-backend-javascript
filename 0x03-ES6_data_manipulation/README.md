@@ -113,5 +113,5 @@ __thisArg__ argument is be the 'this' value of the callback function. It value i
 The array argument is very important if you want to read another index during iteration. Due to the fact that there might not always be an existing index during iteration.
 It is a good practice to not mutate the array during iteration. However you can use the 'array' argument to do so. The array arguemet is not the array that is being built in case of using map(), filter() and flatMap() you can't access the array being built for the callback function.
 
-All iterative methods are copying and generic although they behave differently with empty slots.
+All iterative methods are copying and generic but they behave differently with empty slots.
 
