@@ -1,4 +1,4 @@
-console.log('Wecome to Holberton School, what is your name?')
+console.log('Welcome to Holberton School, what is your name?')
 
 process.stdin.setEncoding('utf-8')
 
