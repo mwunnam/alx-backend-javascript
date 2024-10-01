@@ -13,8 +13,8 @@ function countStudents(path) {
   console.log(rows);
 
 
-  if (rows.lenght < 2) {
-    console.log('Number of studnet: 0')
+  if (rows.length < 2) {
+    console.log('Number of student: 0')
     return
   }
 
@@ -33,8 +33,8 @@ function countStudents(path) {
     }
   }
 
-  const totalStudents = rows.lenght - 1;
-  console.log(`Numbers of students: ${totalStudents}`);
+  const totalStudents = rows.length - 1;
+  console.log(`Number of students: ${totalStudents}`);
 
   for (const field in studentCount) {
     const { count, names } = studentCount[field];
