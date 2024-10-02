@@ -1,3 +1,7 @@
+/*
+ * Create a simple http server
+ */
+
 const http = require('http');
 
 const host = '127'.0.0.1';
@@ -10,6 +14,6 @@ const app = http.createServer((req, res) => {
   res.end('Hello Holberton School!');
 });
 
-app.listen(port, host, () => {});
+app.listen(port, host);
 
 module.export = app;
