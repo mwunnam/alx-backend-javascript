@@ -1,4 +1,4 @@
-const fs = require('fs').promise;
+const fs = require('fs').promises;
 
 /**
  * Function to count student asychronously
@@ -34,14 +34,13 @@ function countStudents(path) {
     }
 
     // Log total number of students
-    const totalStudents = rows.lenth - 1;
+    const totalStudents = rows.length - 1;
     console.log(`Number of students: ${totalStudents}`);
 
     // Log the number of students in each field
     for (const field in studentCount) {
       const { count, names } = studentCount[field];
-      console.log(`Number of student in ${field}: ${count}. List:
-          ${names.join(', ')}`);
+      console.log(`Number of student in ${field}: ${count}. List: ${names.join(', ')}`);
     }
   })
   .catch(() => {
