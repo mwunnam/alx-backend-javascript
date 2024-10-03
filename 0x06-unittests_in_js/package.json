@@ -1,0 +1,15 @@
+{
+  "name": "unittest-project",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "mocha": "__"
+  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "0-calcul.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
