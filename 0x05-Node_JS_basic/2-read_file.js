@@ -9,13 +9,12 @@ function countStudents(path) {
     throw new Error('Cannot load the database');
   }
 
-  const rows = data.split('\n').filter(row => row.trim() !== '');
+  const rows = data.split('\n').filter((row) => row.trim() !== '');
   console.log(rows);
 
-
   if (rows.length < 2) {
-    console.log('Number of student: 0')
-    return
+    console.log('Number of student: 0');
+    return;
   }
 
   const studentCount = {};
@@ -23,7 +22,7 @@ function countStudents(path) {
     const [firstName, , , field] = row.split(',');
 
     if (field in studentCount) {
-      studentCount[field].count++;
+      studentCount[field].count += 1;
       studentCount[field].names.push(firstName);
     } else {
       studentCount[field] = {
@@ -37,8 +36,10 @@ function countStudents(path) {
   console.log(`Number of students: ${totalStudents}`);
 
   for (const field in studentCount) {
-    const { count, names } = studentCount[field];
-    console.log(`Number of students in ${field}: ${count}. List: ${names.join(', ')}`);
+    if (Object.prototype.hasOwnProperty.call(studentCount, field)) {
+      const { count, names } = studentCount[field];
+      console.log(`Number of students in ${field}: ${count}. List: ${names.join(', ')}`);
+    }
   }
 }
 
