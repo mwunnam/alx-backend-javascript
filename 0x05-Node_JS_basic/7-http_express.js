@@ -9,10 +9,10 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  const databasePath = path.join(__dirname, 'database.csv');
+  const databasePath = process.argv[2];
 
   if (!databasePath) {
-    return res.status(400).send('Database path is required');
+    res.status(400).send('Cannot load the database');
   }
   try {
     const data = await countStudents(databasePath);
