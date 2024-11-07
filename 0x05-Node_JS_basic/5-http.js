@@ -17,8 +17,8 @@ const app = http.createServer(async (req, res) => {
     const databasePath = process.argv[2];
 
     try {
-      await countStudents(databasePath);
-      res.end();
+      const output = await countStudents(databasePath);
+      res.end(output);
     } catch (error) {
       res.end(error.message);
     }
