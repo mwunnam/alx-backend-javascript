@@ -27,12 +27,6 @@ const app = http.createServer(async (req, res) => {
   }
 });
 
-const logStream = fs.createWriteStream('server_logs.txt', {flags: 'a' });
-app.on('request', (req, res) => {
-  const logMessage = `${req.method} ${req.url}\n`;
-  logStream.write(logMessage);
-});
-
 app.listen(1245, () => {
   console.log('Server running at http://localhost:1245');
 });
