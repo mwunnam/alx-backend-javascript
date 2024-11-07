@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const countStudents = require('./3-read_file_async');
 
 const app = express();
@@ -12,7 +11,7 @@ app.get('/students', async (req, res) => {
   const databasePath = process.argv[2];
 
   if (!databasePath) {
-    res.status(400).send('Cannot load the database');
+    return res.status(400).send('This is the list of our students Cannot load the database');
   }
   try {
     const data = await countStudents(databasePath);
