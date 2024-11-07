@@ -18,6 +18,7 @@ const app = http.createServer(async (req, res) => {
 
     try {
       await countStudents(databasePath);
+      res.end();
     } catch (error) {
       res.end(error.message);
     }
