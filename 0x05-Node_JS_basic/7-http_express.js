@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const countStudents = require('./3-read_file_async');
 
 const app = express();
@@ -8,7 +9,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  const databasePath = req.query.database;
+  const databasePath = path.join(__dirname, 'database.csv');
 
   if (!databasePath) {
     return res.status(400).send('Database path is required');
@@ -16,9 +17,9 @@ app.get('/students', async (req, res) => {
   try {
     const data = await countStudents(databasePath);
     res.type('text/plain');
-    res.send(`This is the list of our students\n${data}`);
+    return res.send(`This is the list of our students\n${data}`);
   } catch (error) {
-    res.status(500).send(error.message);
+    return res.status(500).send(error.message);
   }
 });
 
