@@ -42,7 +42,7 @@ async function countStudents(path) {
         for (const field in studentCount) {
           if (Object.prototype.hasOwnProperty.call(studentCount, field)) {
             const { count, names } = studentCount[field];
-            console.log(`Number of student in ${field}: ${count}. List: ${names.join(', ')}`);
+            console.log(`Number of students in ${field}: ${count}. List: ${names.join(', ')}`);
           }
         }
 
