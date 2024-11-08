@@ -11,14 +11,14 @@ app.get('/students', async (req, res) => {
   const databasePath = process.argv[2];
 
   if (!databasePath) {
-    return res.status(400).send('This is the list of our students Cannot load the database');
+    return res.status(400).send('Cannot find Database');
   }
   try {
     const data = await countStudents(databasePath);
     res.type('text/plain');
     return res.send(`This is the list of our students\n${data}`);
   } catch (error) {
-    return res.status(500).send(error.message);
+    return res.status(500).send(`This is the list of our students\nCannot load Database`);
   }
 });
 
