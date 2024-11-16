@@ -8,11 +8,12 @@ function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([promise1, promise2])
     .then((result) => {
       result.map((result) => ({
-        status: result.satus,
+        status: result.status,
         value: result.status === 'fulfilled' ? result.value
           : result.reason.toString(),
       }));
     });
+    .catch (error). new Error(error);
 }
 
 export default handleProfileSignup;
