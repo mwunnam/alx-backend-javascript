@@ -11,7 +11,7 @@ function handleProfileSignup(firstName, lastName, fileName) {
         status: result.satus,
         value: result.status === 'fulfilled' ? result.value
           : result.reason.toString(),
-      }))
+      }));
     });
 }
 
